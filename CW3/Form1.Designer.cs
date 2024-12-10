@@ -28,12 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            btnWyswietl = new Button();
+            cbGaraze = new ComboBox();
+            dgvPojazdy = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvPojazdy).BeginInit();
+            SuspendLayout();
+            // 
+            // btnWyswietl
+            // 
+            btnWyswietl.Location = new Point(12, 41);
+            btnWyswietl.Name = "btnWyswietl";
+            btnWyswietl.Size = new Size(121, 23);
+            btnWyswietl.TabIndex = 0;
+            btnWyswietl.Text = "Wyswietl";
+            btnWyswietl.UseVisualStyleBackColor = true;
+            btnWyswietl.Click += btnWyswietl_Click;
+            // 
+            // cbGaraze
+            // 
+            cbGaraze.FormattingEnabled = true;
+            cbGaraze.Location = new Point(12, 12);
+            cbGaraze.Name = "cbGaraze";
+            cbGaraze.Size = new Size(121, 23);
+            cbGaraze.TabIndex = 1;
+            cbGaraze.SelectedIndexChanged += cbGaraze_SelectedIndexChanged;
+            // 
+            // dgvPojazdy
+            // 
+            dgvPojazdy.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPojazdy.Location = new Point(139, 12);
+            dgvPojazdy.Name = "dgvPojazdy";
+            dgvPojazdy.Size = new Size(649, 426);
+            dgvPojazdy.TabIndex = 2;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(dgvPojazdy);
+            Controls.Add(cbGaraze);
+            Controls.Add(btnWyswietl);
+            Name = "Form1";
+            Text = "Form1";
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvPojazdy).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnWyswietl;
+        private ComboBox cbGaraze;
+        private DataGridView dgvPojazdy;
     }
 }
