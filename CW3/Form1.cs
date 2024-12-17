@@ -48,6 +48,11 @@ namespace CW3
             //dgvPojazdy.DataSource = cbGaraze.SelectedItem;
             //Nie wyœwietla informacji poniewa¿ wskazujemy 1 konkretny obiekt
             //a combobox nie wie któr¹ w³aœciowœæ ma wybraæ
+            //MessageBox.Show(Convert.ToString(garaz.ObjetoscGarazu()));
+            MessageBox.Show("Objetosc rzeczywista garazu " + garaz.ObjetoscGarazu() + "\r\n"
+                + "Objetosc hipotetyczna " + Garaz.ObjetoscGarazu2(10, 10, 10) +"\r\n"
+                + "Objetosc hipotetyczna (2 argumenty) " + Garaz.ObjetoscGarazu2(10, 10) +"\r\n"
+                + "Objetosc hipotetyczna (1 argument) " + Garaz.ObjetoscGarazu2(10));
         }
 
         private void Form1_Load(object sender, EventArgs e)
