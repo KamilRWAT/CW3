@@ -23,7 +23,7 @@ namespace CW3
             this.Wysokosc = 2;
         }
 
-        public int ObjetoscGarazu()
+        public int ObjetoscGarazu() //zwykła metoda, do użycia wymaga istnienia "garażu"
         {
             //int objetosc = this.Dlugosc * this.Szerokosc * this.Wysokosc;
             return this.Dlugosc*this.Szerokosc*this.Wysokosc;
@@ -32,10 +32,16 @@ namespace CW3
         }
 
         public static int ObjetoscGarazu2(int wysokosc, int szerokosc, int dlugosc)
+            //metoda statyczna, możemy jej użyć, nawet jeśli nie utworzono żadnego "garazu" klasy "Garaz"
+            //ale aby z niej skorzystać musimy podać dane wejściowe (argumenty metody)
         {
             return dlugosc * szerokosc * wysokosc;
         }
 
+
+        //PRZECIĄŻENIE: użyjemy jeszcze raz tej samej nazwy ObjetoscGarazu2, ale z 2 argumentami
+        //dzięki temu możemy użyć wywołania metody
+        //ObjetoscGarazu2(a,b,c), albo ObjetoscGarazu2(a,b), a nawet ObjetoscGarazu2(a)
         public static int ObjetoscGarazu2(int szerokosc, int dlugosc = 10)
         {
             int wysokosc = 2;
