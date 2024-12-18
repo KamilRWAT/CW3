@@ -31,7 +31,7 @@ namespace CW3
             //return objetosc;
         }
 
-        public static int ObjetoscGarazu2(int wysokosc, int szerokosc, int dlugosc)
+        public static int ObjetoscGarazuStatic(int wysokosc, int szerokosc, int dlugosc)
             //metoda statyczna, możemy jej użyć, nawet jeśli nie utworzono żadnego "garazu" klasy "Garaz"
             //ale aby z niej skorzystać musimy podać dane wejściowe (argumenty metody)
         {
@@ -42,7 +42,7 @@ namespace CW3
         //PRZECIĄŻENIE: użyjemy jeszcze raz tej samej nazwy ObjetoscGarazu2, ale z 2 argumentami
         //dzięki temu możemy użyć wywołania metody
         //ObjetoscGarazu2(a,b,c), albo ObjetoscGarazu2(a,b), a nawet ObjetoscGarazu2(a)
-        public static int ObjetoscGarazu2(int szerokosc, int dlugosc = 10)
+        public static int ObjetoscGarazuStatic(int szerokosc, int dlugosc = 10)
         {
             int wysokosc = 2;
             return dlugosc * szerokosc * wysokosc;

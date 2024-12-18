@@ -50,9 +50,9 @@ namespace CW3
             //a combobox nie wie któr¹ w³aœciowœæ ma wybraæ
             //MessageBox.Show(Convert.ToString(garaz.ObjetoscGarazu()));
             MessageBox.Show("Objetosc rzeczywista garazu " + garaz.ObjetoscGarazu() + "\r\n"
-                + "Objetosc hipotetyczna " + Garaz.ObjetoscGarazu2(10, 10, 10) +"\r\n"
-                + "Objetosc hipotetyczna (2 argumenty) " + Garaz.ObjetoscGarazu2(10, 10) +"\r\n"
-                + "Objetosc hipotetyczna (1 argument) " + Garaz.ObjetoscGarazu2(10));
+                + "Objetosc hipotetyczna " + Garaz.ObjetoscGarazuStatic(10, 10, 10) +"\r\n"
+                + "Objetosc hipotetyczna (2 argumenty) " + Garaz.ObjetoscGarazuStatic(10, 10) +"\r\n"
+                + "Objetosc hipotetyczna (1 argument) " + Garaz.ObjetoscGarazuStatic(10));
         }
 
         private void Form1_Load(object sender, EventArgs e)
