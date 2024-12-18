@@ -1,3 +1,5 @@
+using CW3.Classes.Domain;
+
 namespace CW3
 {
     public partial class Form1 : Form

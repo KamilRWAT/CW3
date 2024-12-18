@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CW3
+namespace CW3.Classes.Domain
 {
     public class Garaz
     {
@@ -13,27 +13,27 @@ namespace CW3
         public int Wysokosc { get; set; }
         public int Dlugosc { get; set; }
         //public int MyProperty { get; set; }
-       
-        public Samochod [] Pojazdy { get; set; }
+
+        public Samochod[] Pojazdy { get; set; }
         public Garaz()
         {
-            this.Nazwa = "Głowny Garaż";
-            this.Dlugosc = 100;
-            this.Szerokosc = 100;
-            this.Wysokosc = 2;
+            Nazwa = "Głowny Garaż";
+            Dlugosc = 100;
+            Szerokosc = 100;
+            Wysokosc = 2;
         }
 
         public int ObjetoscGarazu() //zwykła metoda, do użycia wymaga istnienia "garażu"
         {
             //int objetosc = this.Dlugosc * this.Szerokosc * this.Wysokosc;
-            return this.Dlugosc*this.Szerokosc*this.Wysokosc;
+            return Dlugosc * Szerokosc * Wysokosc;
 
             //return objetosc;
         }
 
         public static int ObjetoscGarazuStatic(int wysokosc, int szerokosc, int dlugosc)
-            //metoda statyczna, możemy jej użyć, nawet jeśli nie utworzono żadnego "garazu" klasy "Garaz"
-            //ale aby z niej skorzystać musimy podać dane wejściowe (argumenty metody)
+        //metoda statyczna, możemy jej użyć, nawet jeśli nie utworzono żadnego "garazu" klasy "Garaz"
+        //ale aby z niej skorzystać musimy podać dane wejściowe (argumenty metody)
         {
             return dlugosc * szerokosc * wysokosc;
         }
