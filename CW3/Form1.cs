@@ -7,12 +7,14 @@ namespace CW3
     {
         Garaz garaz;
         GarazSerwis mojGarazSerwis;
+        ManagerSamochodow mojManagerSamochodow;
         public Form1()
         {
             InitializeComponent();
 
             garaz = new Garaz();
             mojGarazSerwis = new GarazSerwis();
+            mojManagerSamochodow = new ManagerSamochodow();
 
             List<Samochod> samochody = new List<Samochod>();
             Samochod samochod = new Samochod
@@ -55,10 +57,30 @@ namespace CW3
             //Nie wyœwietla informacji poniewa¿ wskazujemy 1 konkretny obiekt
             //a combobox nie wie któr¹ w³aœciowœæ ma wybraæ
             //MessageBox.Show(Convert.ToString(garaz.ObjetoscGarazu()));
-            MessageBox.Show("Objetosc rzeczywista garazu " + mojGarazSerwis.ObjetoscGarazu(garaz) + "\r\n"
-                + "Objetosc hipotetyczna " + GarazSerwis.ObjetoscGarazuStatic(10, 10, 10) +"\r\n"
-                + "Objetosc hipotetyczna (2 argumenty) " + GarazSerwis.ObjetoscGarazuStatic(10, 10) +"\r\n"
-                + "Objetosc hipotetyczna (1 argument) " + GarazSerwis.ObjetoscGarazuStatic(10));
+
+            //MessageBox.Show("Objetosc rzeczywista garazu " + mojGarazSerwis.ObjetoscGarazu(garaz) + "\r\n"
+            //    + "Objetosc hipotetyczna " + GarazSerwis.ObjetoscGarazuStatic(10, 10, 10) +"\r\n"
+            //    + "Objetosc hipotetyczna (2 argumenty) " + GarazSerwis.ObjetoscGarazuStatic(10, 10) +"\r\n"
+            //    + "Objetosc hipotetyczna (1 argument) " + GarazSerwis.ObjetoscGarazuStatic(10));
+            try
+            {
+                List<Samochod> wybraneSamochody = new List<Samochod>();
+                foreach(DataGridViewRow row in dgvPojazdy.SelectedRows)
+                {
+                    wybraneSamochody.Add((Samochod)row.DataBoundItem);
+                }
+
+                //DataGridViewRow row = dgvPojazdy.SelectedRows[0];
+                //Samochod samochod = (Samochod)row.DataBoundItem;
+                mojManagerSamochodow.ZmianaLicznika(Convert.ToDouble(txtPaliwo.Text), wybraneSamochody);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Paliwo musi byæ liczb¹");
+            }
+
+
+            dgvPojazdy.Refresh();
         }
 
         private void Form1_Load(object sender, EventArgs e)

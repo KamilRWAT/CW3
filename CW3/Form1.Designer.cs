@@ -31,14 +31,16 @@
             btnWyswietl = new Button();
             cbGaraze = new ComboBox();
             dgvPojazdy = new DataGridView();
+            txtPaliwo = new TextBox();
+            lblPaliwo = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvPojazdy).BeginInit();
             SuspendLayout();
             // 
             // btnWyswietl
             // 
-            btnWyswietl.Location = new Point(12, 41);
+            btnWyswietl.Location = new Point(12, 147);
             btnWyswietl.Name = "btnWyswietl";
-            btnWyswietl.Size = new Size(121, 23);
+            btnWyswietl.Size = new Size(142, 23);
             btnWyswietl.TabIndex = 0;
             btnWyswietl.Text = "Wyswietl";
             btnWyswietl.UseVisualStyleBackColor = true;
@@ -49,23 +51,40 @@
             cbGaraze.FormattingEnabled = true;
             cbGaraze.Location = new Point(12, 12);
             cbGaraze.Name = "cbGaraze";
-            cbGaraze.Size = new Size(121, 23);
+            cbGaraze.Size = new Size(142, 23);
             cbGaraze.TabIndex = 1;
             cbGaraze.SelectedIndexChanged += cbGaraze_SelectedIndexChanged;
             // 
             // dgvPojazdy
             // 
             dgvPojazdy.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPojazdy.Location = new Point(139, 12);
+            dgvPojazdy.Location = new Point(160, 12);
             dgvPojazdy.Name = "dgvPojazdy";
-            dgvPojazdy.Size = new Size(649, 426);
+            dgvPojazdy.Size = new Size(628, 426);
             dgvPojazdy.TabIndex = 2;
+            // 
+            // txtPaliwo
+            // 
+            txtPaliwo.Location = new Point(12, 118);
+            txtPaliwo.Name = "txtPaliwo";
+            txtPaliwo.Size = new Size(142, 23);
+            txtPaliwo.TabIndex = 3;
+            // 
+            // lblPaliwo
+            // 
+            lblPaliwo.Location = new Point(12, 83);
+            lblPaliwo.Name = "lblPaliwo";
+            lblPaliwo.Size = new Size(142, 32);
+            lblPaliwo.TabIndex = 4;
+            lblPaliwo.Text = "Ile przejedzie kilometrów na podanym paliwie (litry)";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblPaliwo);
+            Controls.Add(txtPaliwo);
             Controls.Add(dgvPojazdy);
             Controls.Add(cbGaraze);
             Controls.Add(btnWyswietl);
@@ -74,6 +93,7 @@
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dgvPojazdy).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -81,5 +101,7 @@
         private Button btnWyswietl;
         private ComboBox cbGaraze;
         private DataGridView dgvPojazdy;
+        private TextBox txtPaliwo;
+        private Label lblPaliwo;
     }
 }
