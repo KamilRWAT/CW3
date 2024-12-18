@@ -1,15 +1,19 @@
 using CW3.Classes.Domain;
+using CW3.Classes.Services;
 
 namespace CW3
 {
     public partial class Form1 : Form
     {
         Garaz garaz;
+        GarazSerwis mojGarazSerwis;
         public Form1()
         {
             InitializeComponent();
 
             garaz = new Garaz();
+            mojGarazSerwis = new GarazSerwis();
+
             List<Samochod> samochody = new List<Samochod>();
             Samochod samochod = new Samochod
             {
@@ -51,10 +55,10 @@ namespace CW3
             //Nie wyœwietla informacji poniewa¿ wskazujemy 1 konkretny obiekt
             //a combobox nie wie któr¹ w³aœciowœæ ma wybraæ
             //MessageBox.Show(Convert.ToString(garaz.ObjetoscGarazu()));
-            MessageBox.Show("Objetosc rzeczywista garazu " + garaz.ObjetoscGarazu() + "\r\n"
-                + "Objetosc hipotetyczna " + Garaz.ObjetoscGarazuStatic(10, 10, 10) +"\r\n"
-                + "Objetosc hipotetyczna (2 argumenty) " + Garaz.ObjetoscGarazuStatic(10, 10) +"\r\n"
-                + "Objetosc hipotetyczna (1 argument) " + Garaz.ObjetoscGarazuStatic(10));
+            MessageBox.Show("Objetosc rzeczywista garazu " + mojGarazSerwis.ObjetoscGarazu(garaz) + "\r\n"
+                + "Objetosc hipotetyczna " + GarazSerwis.ObjetoscGarazuStatic(10, 10, 10) +"\r\n"
+                + "Objetosc hipotetyczna (2 argumenty) " + GarazSerwis.ObjetoscGarazuStatic(10, 10) +"\r\n"
+                + "Objetosc hipotetyczna (1 argument) " + GarazSerwis.ObjetoscGarazuStatic(10));
         }
 
         private void Form1_Load(object sender, EventArgs e)
